@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Web Storage</title>
+    
+    </head>
+    <body>
+        <div id="name"></div>
+        <script>
+       /*
+        // *** LocalStorage ***       
+       // localStorage keeps the value until the cache is being cleaned. The value will stay even the broswer is closed
+        if(typeof(Storage) !== "undefined"){
+            // Store an item    
+            localStorage.setItem('name', 'John Doe');
+
+             // Remove an item
+            //localStorage.removeItem('name');
+
+            // Get Item
+            console.log(localStorage.getItem('name'));
+            
+            if(localStorage.name){
+                 document.getElementById('name').innerHTML=localStorage.getItem('name');
+            }else{
+            document.getElementById('name').innerHTML='No Name Found';
+            }
+        }else{
+            console.log('localStorage Not Available');
+        }
+          */
+
+          // *** SessionStorage ***
+          // sessionStorage is different from localStorage, values are only saved temparory
+          if(typeof(Storage) !== "undefined"){
+            // Store an item    
+            sessionStorage.setItem('name', 'John Doe');
+
+             // Remove an item
+            //localStorage.removeItem('name');
+
+            // Get Item
+            console.log(sessionStorage.getItem('name'));
+            
+            if(localStorage.name){
+                 document.getElementById('name').innerHTML=sessionStorage.getItem('name');
+            }else{
+            document.getElementById('name').innerHTML='No Name Found';
+            }
+        }else{
+            console.log('sessionStorage Not Available');
+        }  
+    
+
+        </script>
+    </body>
+</html>
