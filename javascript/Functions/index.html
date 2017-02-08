@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JavaScript | Functions & Events</title>
+
+    </head>
+    <body>
+
+        <buttton ondblclick="getDate()">Get Date</buttton>
+        <h1 id="showDate"></h1>
+
+        <form id="myForm">
+            <div>
+                <label >Name</label>
+                <input type="text" id="name" onblur="test()" >
+            </div>
+            <div>
+                <label >Email</label>
+                <input type="text" id="email" >
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+
+        <script>
+            // function sayHello(){
+            //     alert('Hello');
+            // }
+
+            // function sayHello(greeting, name = 'Jeff's){
+            //     alert(greeting+ ' '+ name);
+            // }
+
+            // sayHello('Hello');
+
+            // function getSum(a,b){
+            //     return a+b;
+            // }
+
+            // var sum = getSum(4,5);
+            // console.log('The answer is '+ getSum(4,5));
+
+            /*
+                getDate()   Get the day as a number (1-31)
+                getDay()    Get the weekday as a number
+                getFullYear()   Get the four digit year (yyyy)'
+                getHours()  Get the hour (0-23)
+                getMilliseconds()   get the milliseconds (0-999)
+                getMinutes()    Get the minutes (0-59)
+                getSeconds()    Get the seconds (0-59)
+                getTime()       Get the time (milliseconds since January 1,1970)
+
+                Event listeners
+                onblur          switch focus away from it
+                onchange
+                onfocus
+                onselect
+                onsubmit
+                onreset
+                onkeydown
+                onkeyup
+                onkeypress
+
+            */
+
+
+            function getDate(){
+                var d = new Date();
+                document.getElementById('showDate').innerHTML = d;
+            }
+
+            function submitForm(e){
+                e.preventDefault();
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                console.log(name);
+            }
+
+            function test(){
+                alert('Blur');
+            }
+
+            document.getElementById('myForm').addEventListener('submit',submitForm, false);
+        </script>
+    </body>
+</html>
